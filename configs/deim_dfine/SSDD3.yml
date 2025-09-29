@@ -1,0 +1,62 @@
+__include__: [ './dfine-ssdd.yml', '../base/deim.yml' ]
+
+output_dir: ./deim_outputs/id-7M-B1-C-180epoch
+
+# ---- 优化器（最激进）----
+optimizer:
+  type: AdamW
+  params:
+    - { params: '^(?=.*backbone)(?!.*(norm|bn)).*$', lr: 0.00045 }
+    - { params: '^(?=.*backbone)(?=.*(norm|bn)).*$', lr: 0.00045, weight_decay: 0.0 }
+    - { params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$', weight_decay: 0.0 }
+  lr: 0.00095          # 进一步提高学习率
+  betas: [0.9, 0.92]   # 调整beta增加激进性
+  weight_decay: 0.00001  # 最小权重衰减
+
+# ---- 调度策略（最大化性能）----
+epoches: 200
+lrsheduler: multistep   # 改用多步下降
+lr_gamma: 0.5
+milestones: [60, 120, 160]  # 关键节点下降
+no_aug_epoch: 50
+warmup_iter: 800        # 更短暖起
+
+# ---- 数据增强（最大化多样性）----
+train_dataloader:
+  dataset:
+    transforms:
+      mosaic_prob: 0.35  # 最高mosaic概率
+      policy:
+        epoch: [40, 100, 150]   # 更激进的增强策略
+  collate_fn:
+    mixup_epochs: [20, 60]      # 启用mixup增强
+    stop_epoch: 150
+    ema_restart_decay: 0.99995  # 最高EMA稳定性
+    base_size_repeat: 1
+
+# ---- 训练策略增强 ----
+use_amp: true           # 启用混合精度训练
+sync_bn: true
+clip_max_norm: 5.0      # 更宽松的梯度裁剪
+
+# ---- 损失权重调整（更关注检测性能）----
+DEIMCriterion:
+  weight_dict: 
+    loss_vfl: 1.2       # 提高分类权重
+    loss_bbox: 6.0      # 提高回归权重
+    loss_giou: 2.5
+    loss_fgl: 0.1       # 降低辅助损失权重
+    loss_ddf: 1.0
+    loss_mal: 0.8
+
+# 模型配置保持不变
+DEIM:
+  c_mid: 320
+
+HGNetv2:
+  name: 'B1'
+  return_idx: [2, 3]
+  pretrained: False
+
+HybridEncoder:
+  in_channels: [320, 320]
