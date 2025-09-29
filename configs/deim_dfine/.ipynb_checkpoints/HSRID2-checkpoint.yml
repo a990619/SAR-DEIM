@@ -1,0 +1,49 @@
+__include__: [
+  './dfine-id.yml',
+  '../base/deim.yml'
+]
+
+# ============ 输出 ============
+output_dir: ./deim_outputs/id2gai_vB
+
+# ============ 优化器 ============
+optimizer:
+  type: AdamW
+  params:
+    # backbone 更稳，norm/bn 不衰减
+    - { params: '^(?=.*backbone)(?!.*(norm|bn)).*$',                   lr: 0.00030 }
+    - { params: '^(?=.*backbone)(?=.*(norm|bn)).*$',                   lr: 0.00030, weight_decay: 0.0 }
+    # encoder/decoder 的 norm/bn/bias 不衰减
+    - { params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$', weight_decay: 0.0 }
+
+  # 全局 LR：略降，配合更早进入衰减
+  lr: 0.00075
+  betas: [0.9, 0.999]
+  weight_decay: 0.00006
+
+# ============ 训练轮数 & 调度 ============
+epoches: 160
+flat_epoch: 88
+lr_gamma: 0.96
+
+# no-aug 从 124 开始到 160，共 36 轮（与下方 policy 对齐）
+no_aug_epoch: 36
+
+# ============ 数据加载 & 增广节奏 ============
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        # [84, 108): 强增强；[108, 124): 过渡；[124, +∞): no-aug
+        epoch: [96, 108, 120]
+
+      # —— 若框架支持“分段概率/幅度”，可进一步降噪 —— 
+      # mosaic_prob: [0.8, 0.4, 0.0]
+      # hsv_prob:    [0.8, 0.4, 0.0]
+      # scale_range: [[0.5, 1.5], [0.75, 1.25], [1.0, 1.0]]
+
+  collate_fn:
+    mixup_epochs: [0, 0]
+    # ⚠️ 与第三段起点对齐
+    stop_epoch: 120
+    base_size_repeat: 3

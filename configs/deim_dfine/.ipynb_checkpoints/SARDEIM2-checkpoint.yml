@@ -1,0 +1,45 @@
+__include__: [
+  './dfine_hgnetv2_n_coco.yml',
+  '../base/deim.yml'
+]
+
+# ============ 输出 ============
+output_dir: ./deim_outputs/SAR-5.26
+
+# ============ 优化器 ============
+optimizer:
+  type: AdamW
+  params:
+    # backbone 更稳，norm/bn 不衰减
+    - { params: '^(?=.*backbone)(?!.*(norm|bn)).*$',                 lr: 0.00030 }
+    - { params: '^(?=.*backbone)(?=.*(norm|bn)).*$',                 lr: 0.00030, weight_decay: 0.0 }
+    # encoder/decoder 的 norm/bn/bias 不衰减
+    - { params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$', weight_decay: 0.0 }
+
+  # 全局 LR：0.00070 -> 0.00075，给过渡段更多学习能力
+  lr: 0.00075
+  betas: [0.9, 0.999]
+  # WD：0.00008 -> 0.00006，减一点正则，利于小目标拟合
+  weight_decay: 0.00006
+
+# ============ 训练轮数 & 调度 ============
+epoches: 160
+# 平坦段略拉长，过渡更稳
+flat_epoch: 96
+
+# no-aug 改为从 120 开始，持续 40 轮（与下方 policy 对齐）
+no_aug_epoch: 40
+lr_gamma: 1.0
+
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        # 这个策略默认就是 stop_epoch_forward，只接受单个 int
+        epoch: 120   # <- 别用列表了
+
+  collate_fn:
+    mixup_epochs: [0, 0]  # 仍然关闭 MixUp（强增强已删）
+    stop_epoch: 120       # 与上面对齐
+    base_size_repeat: 3
+

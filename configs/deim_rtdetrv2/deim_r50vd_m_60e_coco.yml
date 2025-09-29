@@ -24,7 +24,7 @@ optimizer:
   weight_decay: 0.0001
 
 # change part
-epoches: 60
+epoches: 100
 flat_epoch: 34    # 4 + 60 / 2
 no_aug_epoch: 2
 

@@ -1,0 +1,57 @@
+__include__: [
+  './dfine-id.yml',
+  '../base/deim.yml'
+]
+
+# ============ 输出 ============
+output_dir: ./deim_outputs/id-9.1323.40
+
+# ============ 优化器 ============
+optimizer:
+  type: AdamW
+  params:
+    # backbone 更稳，norm/bn 不衰减
+    - { params: '^(?=.*backbone)(?!.*(norm|bn)).*$',                 lr: 0.00030 }
+    - { params: '^(?=.*backbone)(?=.*(norm|bn)).*$',                 lr: 0.00030, weight_decay: 0.0 }
+    # encoder/decoder 的 norm/bn/bias 不衰减
+    - { params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$', weight_decay: 0.0 }
+
+  # 更激进的全局 LR（但配合更长暖起和平坦段提前结束）
+  lr: 0.00082         # 0.00075 -> 0.00082
+  betas: [0.9, 0.999]
+  # 稍减正则，利于小目标拟合
+  weight_decay: 0.00005   # 0.00006 -> 0.00005
+
+# ============ 训练轮数 & 调度 ============
+epoches: 200
+# 平坦段略缩短，让余弦衰减更早介入，缓解平台期
+flat_epoch: 88           # 96 -> 88
+# 拉长 no-aug 收敛段：从 124 开始一直到 160，共 36 轮
+no_aug_epoch: 36         # 32 -> 36
+lr_gamma: 1.0
+# 把暖起再拉长一点，减小强增强入场抖动
+warmup_iter: 3000        # 2000 -> 3000
+
+# ============ 数据加载 & 增广节奏 ============
+train_dataloader:
+  dataset:
+    transforms:
+      # 入场减震：降低 Mosaic 触发概率；IoU-Crop 的 p 由底层配置决定，
+      # 如 dfine-ssdd.yml 里 p 比较高，可在那边适当降一点（比如 0.8 -> 0.6）
+      mosaic_prob: 0.35    # 0.5 -> 0.35，减少拼接形态突变
+      policy:
+        # 三段式：强增强 -> 过渡 -> no-aug
+        # [78, 116): 强增强（含 mosaic；MixUp 仅在下方短窗开启）
+        # [116, 124): 过渡减弱
+        # [124, +∞): no-aug 收尾（与 no_aug_epoch 对齐）
+        epoch: [78, 116, 124]
+
+  collate_fn:
+    # MixUp 更短更靠后，避免刚入场就叠太多噪声
+    mixup_epochs: [88, 96]   # 84~96 -> 88~96
+    # 第二阶段切换点，确保 best_stg1.pth 已产生，避免找不到权重
+    stop_epoch: 124          # 128 -> 124（与第三段起点对齐）
+    # 第二阶段 EMA 重启用更快的衰减，贴近新分布
+    ema_restart_decay: 0.9997   # 0.9999 -> 0.9997
+    # 小目标友好
+    base_size_repeat: 3

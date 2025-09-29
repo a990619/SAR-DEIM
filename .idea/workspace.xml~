@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="510e0cdb-2747-4944-ba8b-ca903cb21336" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/base/dataloader.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base/dataloader.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/base/dfine_hgnetv2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/base/dfine_hgnetv2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/dataset/coco_detection.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/dataset/coco_detection.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/deim_dfine/deim_hgnetv2_s_coco.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/deim_dfine/deim_hgnetv2_s_coco.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/deim_dfine/dfine_hgnetv2_n_coco.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/deim_dfine/dfine_hgnetv2_n_coco.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/deim_rtdetrv2/deim_r50vd_60e_coco.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/deim_rtdetrv2/deim_r50vd_60e_coco.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/deim_rtdetrv2/deim_r50vd_m_60e_coco.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/deim_rtdetrv2/deim_r50vd_m_60e_coco.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/runtime.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/runtime.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/backbone/hgnetv2.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/backbone/hgnetv2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/data/dataset/coco_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/data/dataset/coco_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/deim/deim.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/deim/deim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/teaser_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/teaser_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="30ENY07d8DMUHoxclbmCyjKs7jv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/dzy/deep1/pytorch/deims/sarship/DEIM_m3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="dataprocess" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEIM_origin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataprocess.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="redd2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEIM_origin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/redd2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEIM_origin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEIM_origin" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.redd2" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.dataprocess" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="510e0cdb-2747-4944-ba8b-ca903cb21336" name="Changes" comment="" />
+      <created>1753188816605</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753188816605</updated>
+      <workItem from="1753188818669" duration="3885000" />
+      <workItem from="1753277380040" duration="1871000" />
+      <workItem from="1753338271281" duration="211000" />
+      <workItem from="1753353414524" duration="1625000" />
+      <workItem from="1753408505949" duration="4217000" />
+      <workItem from="1753440465819" duration="6501000" />
+      <workItem from="1753494685917" duration="522000" />
+      <workItem from="1753495835196" duration="22000" />
+      <workItem from="1753496885375" duration="745000" />
+      <workItem from="1753512704386" duration="2120000" />
+      <workItem from="1753692339665" duration="4127000" />
+      <workItem from="1753838032905" duration="71000" />
+      <workItem from="1753852812853" duration="1462000" />
+      <workItem from="1753931261312" duration="1727000" />
+      <workItem from="1753957705147" duration="2000" />
+      <workItem from="1753959256520" duration="12000" />
+      <workItem from="1754476399463" duration="999000" />
+      <workItem from="1754477839584" duration="4556000" />
+      <workItem from="1754483137197" duration="594000" />
+      <workItem from="1754624647995" duration="1188000" />
+      <workItem from="1754735594806" duration="2209000" />
+      <workItem from="1755150887255" duration="1213000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/engine/misc/logger.py</url>
+          <line>214</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataprocess.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dataprocess.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/engine/data/dataset/coco_dataset.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/engine/solver/det_solver.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/engine/deim/deim.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/engine/deim/deim.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
