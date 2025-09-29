@@ -37,4 +37,10 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --master_port=7777 --nproc_per_node=4 trai
 </details>
 
 
+THE DATASET~
+https://pan.baidu.com/s/1nzyoekGwG-cxM4YufXnPfg 
+Extraction code: tdjc 
+
+
+
 ✨ Feel free to contribute and reach out if you have any questions! ✨ zonghezhou5@gmail.com
