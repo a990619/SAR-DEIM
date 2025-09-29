@@ -36,8 +36,5 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --master_port=7777 --nproc_per_node=4 trai
 ```
 </details>
 
-<details>
-<summary> Customizing Batch Size </summary>
 
-
-✨ Feel free to contribute and reach out if you have any questions! ✨
+✨ Feel free to contribute and reach out if you have any questions! ✨ zonghezhou5@gmail.com
